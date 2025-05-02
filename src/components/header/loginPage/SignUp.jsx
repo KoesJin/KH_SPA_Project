@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaUser, FaLock, FaRegIdCard } from 'react-icons/fa';
+import { FaUser, FaLock, FaRegIdCard, FaPhone } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Background,
@@ -49,6 +49,11 @@ const schema = yup.object().shape({
     // oneOf([허용할 값 ~~~ ], '에러 메세지')
     .oneOf([yup.ref('userPw'), null], '비밀번호가 일치하지 않습니다.')
     .required('비밀번호 확인을 입력하세요.'),
+
+  phone: yup
+    .string()
+    .required('전화번호를 입력하세요.')
+    .matches(/^010\d{8}$/, "010으로 시작하고 '-' 제외한 11자리여야 합니다."),
 });
 
 const SignUp = () => {
@@ -73,6 +78,7 @@ const SignUp = () => {
         userName: data.userName,
         userId: data.userId,
         userPw: data.userPw,
+        phone: data.phone,
       });
 
       if (res.data) {
@@ -123,6 +129,14 @@ const SignUp = () => {
             <Input type="text" placeholder="이름 입력" {...register('userName')} />
           </InputWrapper>
           {errors.userName && <ErrorText style={{ textAlign: 'left' }}>{errors.userName.message}</ErrorText>}
+
+          <InputWrapper>
+            <Icon>
+              <FaPhone />
+            </Icon>
+            <Input type="text" placeholder="전화번호 입력" {...register('phone')} />
+          </InputWrapper>
+          {errors.phone && <ErrorText style={{ textAlign: 'left' }}>{errors.phone.message}</ErrorText>}
 
           <InputWrapper>
             <Icon>

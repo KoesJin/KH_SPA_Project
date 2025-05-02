@@ -49,6 +49,10 @@ const MyPage = () => {
               <Label>아이디</Label>
               <Value>{userInfo.userId}</Value>
             </InfoRow>
+            <InfoRow>
+              <Label>전화번호</Label>
+              <Value>{userInfo.phone}</Value>
+            </InfoRow>
 
             <ButtonGroup>
               <StyledButton onClick={handleEdit}>수정하기</StyledButton>
