@@ -1,3 +1,16 @@
 {
-  "user": [{ "userNo": 1, "userName": "김진석", "userId": "kjs", "userPw": "qwe123" }]
+  "user": [
+    {
+      "userName": "김진석",
+      "userId": "kjs",
+      "userPw": "qwe123",
+      "id": "83e8"
+    },
+    {
+      "id": "cd2a",
+      "userName": "김진석",
+      "userId": "wlstjr2001",
+      "userPw": "qwe123"
+    }
+  ]
 }

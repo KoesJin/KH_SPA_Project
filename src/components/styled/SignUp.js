@@ -96,3 +96,9 @@ export const SubText = styled.p`
     }
   }
 `;
+
+export const ErrorText = styled.p`
+  font-size: 14px;
+  color: red;
+  margin: -8px 0 8px 0;
+`;
