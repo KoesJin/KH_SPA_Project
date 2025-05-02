@@ -4,6 +4,7 @@ import MainPage from '../../pages/MainPage';
 import LoginPage from '../../pages/LoginPage';
 import Header from '../header/Header';
 import SignUpPage from '../../pages/SignUpPage';
+import MyPage from '../header/myPage/myPage';
 
 const AppContent = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const AppContent = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/mypage" element={<MyPage />} />
         </Routes>
       </Container>
     </>

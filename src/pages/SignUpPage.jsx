@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUp from '../components/loginPage/SignUp';
+import SignUp from '../components/header/loginPage/SignUp';
 
 const LoginPage = () => {
   return (

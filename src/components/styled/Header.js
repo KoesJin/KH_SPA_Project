@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header`
 export const Logo = styled.h1`
   font-size: 28px;
   color: #e50914;
+  cursor: pointer;
 `;
 
 export const Nav = styled.nav`
