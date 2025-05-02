@@ -1,5 +1,4 @@
 import React from 'react';
-import useUserStore from '../../../store/userInfoStore';
 import {
   Background,
   Box,
@@ -12,24 +11,19 @@ import {
   ProfileCard,
   ButtonGroup,
   StyledButton,
-} from '../../styled/MyPage';
+} from '../components/styled/MyPage';
+import userInfoStore from '../store/userInfoStore';
+import DeleteModal from '../components/header/myPage/DeleteModal';
+import UpdateModal from '../components/header/myPage/UpdateModal';
+import { useState } from 'react';
 
 const MyPage = () => {
-  const { userInfo, clearUserInfo } = useUserStore();
+  const [modalType, setModalType] = useState(null);
 
-  const handleDelete = () => {
-    const confirmDelete = confirm('정말 탈퇴하시겠습니까?');
-    if (confirmDelete) {
-      clearUserInfo();
-      alert('회원 정보가 삭제되었습니다.');
-      // 서버 요청이 있다면 axios.delete()도 이곳에
-    }
-  };
+  const openModal = (type) => setModalType(type);
+  const closeModal = () => setModalType(null);
 
-  const handleEdit = () => {
-    alert('수정하기 기능은 준비 중입니다!');
-    // 페이지 이동 또는 모달 띄우는 로직도 가능
-  };
+  const { userInfo } = userInfoStore();
 
   return (
     <Background>
@@ -55,8 +49,8 @@ const MyPage = () => {
             </InfoRow>
 
             <ButtonGroup>
-              <StyledButton onClick={handleEdit}>수정하기</StyledButton>
-              <StyledButton onClick={handleDelete}>삭제하기</StyledButton>
+              <StyledButton onClick={() => openModal('update')}>수정하기</StyledButton>
+              <StyledButton onClick={() => openModal('delete')}>탈퇴하기</StyledButton>
             </ButtonGroup>
           </Box>
         </ProfileCard>
@@ -64,6 +58,10 @@ const MyPage = () => {
         // 로그인 정보가 없지만 URL 경로로 뚫고올 경우
         <Notice>로그인 정보가 없습니다.</Notice>
       )}
+
+      {/* 모달 컴포넌트 */}
+      {modalType === 'update' && <UpdateModal closeModal={closeModal} />}
+      {modalType === 'delete' && <DeleteModal closeModal={closeModal} />}
     </Background>
   );
 };

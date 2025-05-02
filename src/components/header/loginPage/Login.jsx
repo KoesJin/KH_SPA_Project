@@ -71,14 +71,19 @@ const Login = () => {
             <Icon>
               <FaUser />
             </Icon>
-            <Input type="text" placeholder="아이디 입력" onChange={(e) => setUserId(e.target.value)} />
+            <Input type="text" placeholder="아이디 입력" value={userId} onChange={(e) => setUserId(e.target.value)} />
           </InputWrapper>
 
           <InputWrapper>
             <Icon>
               <FaLock />
             </Icon>
-            <Input type="password" placeholder="비밀번호 입력" onChange={(e) => setUserPw(e.target.value)} />
+            <Input
+              type="password"
+              placeholder="비밀번호 입력"
+              value={userPw}
+              onChange={(e) => setUserPw(e.target.value)}
+            />
           </InputWrapper>
 
           <Button type="submit">로그인</Button>
