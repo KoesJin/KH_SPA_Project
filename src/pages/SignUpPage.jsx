@@ -13,7 +13,7 @@ import {
   Button,
   SubText,
   ErrorText,
-} from '../components/styled/SignUp';
+} from '../components/styled/SignUpPage.styles';
 import * as yup from 'yup'; // 유효성 검사 라이브러리
 import { yupResolver } from '@hookform/resolvers/yup'; // react-hook-form에서 yup 사용하려면 필요
 import { useForm } from 'react-hook-form';

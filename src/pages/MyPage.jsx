@@ -11,10 +11,10 @@ import {
   ProfileCard,
   ButtonGroup,
   StyledButton,
-} from '../components/styled/MyPage';
+} from '../components/styled/MyPage.styles';
 import userInfoStore from '../store/userInfoStore';
-import DeleteModal from '../components/header/myPage/DeleteModal';
-import UpdateModal from '../components/header/myPage/UpdateModal';
+import DeleteModal from '../components/common/modal/DeleteModal';
+import UpdateModal from '../components/common/modal/UpdateModal';
 import { useState } from 'react';
 
 const MyPage = () => {

@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 
+// *************  Benner 영역  *****************
 export const BannerContainer = styled.div`
   position: relative;
   height: 400px;
@@ -37,4 +38,37 @@ export const BookButton = styled.button`
   &:hover {
     background-color: #b0060f;
   }
+`;
+
+// *************  MovieList 영역  *****************
+
+export const Section = styled.section`
+  padding: 40px 60px;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+export const MovieContainer = styled.div`
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+`;
+
+export const MovieCard = styled.div`
+  width: 200px;
+  text-align: center;
+
+  p {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+`;
+
+export const MoviePoster = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 `;

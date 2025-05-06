@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HeaderContainer, Logo, Nav, NavItem } from '../styled/Header';
+import { HeaderContainer, Logo, Nav, NavItem } from '../styled/Header.styles';
 import userInfoStore from '../../store/userInfoStore';
 
 const Header = () => {

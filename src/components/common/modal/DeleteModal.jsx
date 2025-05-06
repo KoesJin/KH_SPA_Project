@@ -8,7 +8,7 @@ import {
   ButtonGroup,
   CancelBtn,
   ConfirmBtn,
-} from '../../styled/DeleteUpdateModal';
+} from '../../styled/DeleteUpdateModal.styles';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import userInfoStore from '../../../store/userInfoStore';
@@ -19,6 +19,11 @@ const DeleteModal = ({ closeModal }) => {
   const { userInfo, clearUserInfo } = userInfoStore();
 
   const handleDelete = async (inputPw) => {
+    if (!inputPw) {
+      alert('비밀번호를 입력해 주세요.');
+      return;
+    }
+
     if (inputPw !== userInfo.userPw) {
       alert('비밀번호가 일치하지 않습니다.');
     } else {

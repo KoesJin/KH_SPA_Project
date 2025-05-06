@@ -8,7 +8,7 @@ import {
   ButtonGroup,
   CancelBtn,
   ConfirmBtn,
-} from '../../styled/DeleteUpdateModal';
+} from '../../styled/DeleteUpdateModal.styles';
 
 const UpdateModal = ({ closeModal }) => {
   return (

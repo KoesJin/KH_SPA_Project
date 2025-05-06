@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { darkTheme, lightTheme } from './themes/themes';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Header from './components/header/Header';
+import Header from './components/common/Header';
 import MainPage from './pages/MainPage';
 import LoginPage from './pages/LoginPage';
 import MyPage from './pages/MyPage';
