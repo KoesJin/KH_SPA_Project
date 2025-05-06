@@ -14,8 +14,9 @@ import {
 } from '../components/styled/MyPage.styles';
 import userInfoStore from '../store/userInfoStore';
 import DeleteModal from '../components/common/modal/DeleteModal';
-import UpdateModal from '../components/common/modal/UpdateModal';
+import UpdateInfoModal from '../components/common/modal/UpdateInfoModal';
 import { useState } from 'react';
+import UpdatePwModal from '../components/common/modal/UpdatePwModal';
 
 const MyPage = () => {
   const [modalType, setModalType] = useState(null);
@@ -49,7 +50,8 @@ const MyPage = () => {
             </InfoRow>
 
             <ButtonGroup>
-              <StyledButton onClick={() => openModal('update')}>수정하기</StyledButton>
+              <StyledButton onClick={() => openModal('updateInfo')}>정보수정</StyledButton>
+              <StyledButton onClick={() => openModal('updatePw')}>비밀번호 변경</StyledButton>
               <StyledButton onClick={() => openModal('delete')}>탈퇴하기</StyledButton>
             </ButtonGroup>
           </Box>
@@ -60,7 +62,8 @@ const MyPage = () => {
       )}
 
       {/* 모달 컴포넌트 */}
-      {modalType === 'update' && <UpdateModal closeModal={closeModal} />}
+      {modalType === 'updateInfo' && <UpdateInfoModal closeModal={closeModal} />}
+      {modalType === 'updatePw' && <UpdatePwModal closeModal={closeModal} />}
       {modalType === 'delete' && <DeleteModal closeModal={closeModal} />}
     </Background>
   );

@@ -13,7 +13,7 @@ export const Overlay = styled.div`
   z-index: 999;
 `;
 
-export const ModalBox = styled.div`
+export const ModalBox = styled.form`
   background: #222;
   padding: 32px;
   border-radius: 12px;

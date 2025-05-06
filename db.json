@@ -1,16 +1,9 @@
 {
   "user": [
     {
-      "id": "4f24",
-      "userName": "김진석",
+      "id": "0180",
+      "userName": "김진만",
       "userId": "wlstjr2001",
-      "userPw": "qwe123",
-      "phone": "01012341234"
-    },
-    {
-      "id": "b299",
-      "userName": "홍길동",
-      "userId": "hong123",
       "userPw": "qwe123",
       "phone": "01011112222"
     }

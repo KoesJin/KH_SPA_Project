@@ -18,13 +18,15 @@ const DeleteModal = ({ closeModal }) => {
   const [password, setPassword] = useState('');
   const { userInfo, clearUserInfo } = userInfoStore();
 
-  const handleDelete = async (inputPw) => {
-    if (!inputPw) {
+  const handleDelete = async (e) => {
+    e.preventDefault();
+
+    if (!password) {
       alert('비밀번호를 입력해 주세요.');
       return;
     }
 
-    if (inputPw !== userInfo.userPw) {
+    if (password !== userInfo.userPw) {
       alert('비밀번호가 일치하지 않습니다.');
     } else {
       try {
@@ -51,7 +53,7 @@ const DeleteModal = ({ closeModal }) => {
 
   return (
     <Overlay>
-      <ModalBox>
+      <ModalBox onSubmit={handleDelete}>
         <Title>회원 탈퇴 확인</Title>
         <Text>정말 탈퇴하시겠습니까? 비밀번호를 입력해주세요.</Text>
         <Input
@@ -61,8 +63,10 @@ const DeleteModal = ({ closeModal }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <ButtonGroup>
-          <CancelBtn onClick={closeModal}>취소</CancelBtn>
-          <ConfirmBtn onClick={() => handleDelete(password)}>확인</ConfirmBtn>
+          <CancelBtn type="button" onClick={closeModal}>
+            취소
+          </CancelBtn>
+          <ConfirmBtn>확인</ConfirmBtn>
         </ButtonGroup>
       </ModalBox>
     </Overlay>
