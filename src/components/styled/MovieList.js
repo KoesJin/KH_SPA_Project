@@ -80,7 +80,6 @@ export const SearchWrapper = styled.div`
   border: 1px solid #444;
   border-radius: 6px;
   padding: 6px 12px;
-  width: 25%;
 `;
 
 export const SearchInput = styled.input`

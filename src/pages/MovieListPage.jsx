@@ -25,16 +25,30 @@ const MovieList = () => {
   // 로딩바
   const [loading, setLoading] = useState(true);
 
-  // 마운트 시 , 페이지 변경시 렌더링
+  // 검색
+  const [searchInput, setSearchInput] = useState('');
+  const [isSearchMode, setIsSearchMode] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState('');
+
+  // 마운트 시 , 페이지 변경, 검색어 변경 렌더링
   useEffect(() => {
-    const getMovies = async (page) => {
+    const getMovies = async () => {
       setLoading(true);
 
       try {
         const apiKey = import.meta.env.VITE_MOVIE_API;
-        const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=ko-KR&region=KR&page=${page}`
-        );
+
+        let res; // isSearchMode에 맞게 res 변경
+
+        if (isSearchMode) {
+          res = await axios.get(
+            `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(searchKeyword)}&language=ko-KR&page=${currentPage}`
+          );
+        } else {
+          res = await axios.get(
+            `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=ko-KR&region=KR&page=${currentPage}`
+          );
+        }
 
         // 영화 저장
         setMovies(res.data.results);
@@ -50,7 +64,25 @@ const MovieList = () => {
     };
 
     getMovies(currentPage);
-  }, [currentPage]);
+  }, [currentPage, searchKeyword, isSearchMode]);
+
+  const searchMovie = (keyword) => {
+    const trimmed = keyword.trim();
+
+    // 입력값 없으면 초기화
+    if (!trimmed) {
+      setIsSearchMode(false); // 검색 모드 해제
+      setSearchKeyword(''); // 검색 키워드 초기화
+      setCurrentPage(1); // 첫 페이지로
+      return;
+    }
+
+    // 검색어 있으면 검색 모드로 전환
+    setIsSearchMode(true);
+    setSearchKeyword(trimmed);
+    setCurrentPage(1); // 검색 시 무조건 첫 페이지
+    setSearchInput(''); // 검색창 비우기
+  };
 
   return (
     <>
@@ -64,8 +96,24 @@ const MovieList = () => {
           <HeaderSection>
             <HeaderTitle>🎬 현재 상영 중인 영화</HeaderTitle>
             <SearchWrapper>
-              <SearchIcon style={{ color: '#ccc', marginRight: '8px' }} />
-              <SearchInput type="text" placeholder="영화 제목을 검색해보세요..." />
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  searchMovie(searchInput);
+                }}
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <SearchIcon
+                  onClick={() => searchMovie(searchInput)}
+                  style={{ color: '#ccc', marginRight: '8px', cursor: 'pointer' }}
+                />
+                <SearchInput
+                  type="text"
+                  placeholder="영화 제목을 검색해보세요."
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+              </form>
             </SearchWrapper>
           </HeaderSection>
 
