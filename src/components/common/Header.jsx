@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo onClick={() => navigate('/')}>🎬 Seokflix</Logo>
+      <Logo onClick={() => navigate('/')}>🎬 SeokCinema</Logo>
       <Nav>
         <NavItem to="/moviePage">영화</NavItem>
         <NavItem>게시판</NavItem>

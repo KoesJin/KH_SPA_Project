@@ -3,26 +3,31 @@ import { styled } from 'styled-components';
 // *************  Benner 영역  *****************
 export const BannerContainer = styled.div`
   position: relative;
-  height: 400px;
-  background-image: url('https://images.unsplash.com/photo-1607082349566-1873426c21ff?fit=crop&w=1200');
+  height: 450px;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+    url('https://i.pinimg.com/736x/23/af/a3/23afa315ba55626e119ec5c2e8213258.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
+  color: white;
 `;
 
 export const BannerContent = styled.div`
-  padding-left: 80px;
-  z-index: 2;
+  max-width: 600px;
+  margin-left: 80px;
 
   h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 16px;
   }
 
   p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 30px;
   }
 `;
 
@@ -31,9 +36,11 @@ export const BookButton = styled.button`
   color: white;
   border: none;
   font-size: 18px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: #b0060f;
@@ -54,7 +61,6 @@ export const SectionTitle = styled.h2`
 export const MovieContainer = styled.div`
   display: flex;
   gap: 24px;
-  flex-wrap: wrap;
 `;
 
 export const MovieCard = styled.div`

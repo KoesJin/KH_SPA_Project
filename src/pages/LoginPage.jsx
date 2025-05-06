@@ -64,7 +64,7 @@ const LoginPage = () => {
   return (
     <Background>
       <LoginBox>
-        <Logo>Seokflix</Logo>
+        <Logo>SeokCinema</Logo>
         <Title>로그인</Title>
         <Form onSubmit={handleLogin}>
           <InputWrapper>

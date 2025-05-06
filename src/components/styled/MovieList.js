@@ -2,17 +2,19 @@ import { styled } from 'styled-components';
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: ${({ isTop5 }) => (isTop5 ? 'repeat(auto-fit, minmax(150px, 1fr))' : 'repeat(4, 1fr)')};
+  justify-items: center;
   gap: 20px;
   padding: 20px;
 `;
 
 export const MovieCard = styled.div`
   text-align: center;
+  cursor: pointer;
 `;
 
 export const MovieImage = styled.img`
-  width: 80%;
+  width: ${(props) => (props.isTop5 ? '45%' : '80%')};
   border-radius: 8px;
 `;
 

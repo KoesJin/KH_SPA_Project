@@ -49,7 +49,13 @@ const MovieList = () => {
         <>
           <GridContainer>
             {movies.map((m) => (
-              <Moive key={m.id} poster_path={m.poster_path} title={m.title} vote_average={m.vote_average} />
+              <Moive
+                key={m.id}
+                poster_path={m.poster_path}
+                title={m.title}
+                vote_average={m.vote_average}
+                movieId={m.id}
+              />
             ))}
           </GridContainer>
 

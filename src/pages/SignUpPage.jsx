@@ -119,7 +119,7 @@ const SignUpPage = () => {
   return (
     <Background>
       <SignUpBox>
-        <Logo>Seokflix</Logo>
+        <Logo>SeokCinema</Logo>
         <Title>회원가입</Title>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputWrapper>
