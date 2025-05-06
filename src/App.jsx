@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import MyPage from './pages/MyPage';
 import SignUpPage from './pages/SignUpPage';
 import { Container } from './components/common/common';
+import MovieList from './pages/MovieListPage';
 
 // Router 외부에서 location을 선언하면 에러가남
 // 그렇기에 별도의 컴포넌트로 분리
@@ -25,6 +26,7 @@ const AppContent = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/moviePage" element={<MovieList />} />
       </Routes>
     </Container>
   );

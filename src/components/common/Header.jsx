@@ -12,7 +12,7 @@ const Header = () => {
     <HeaderContainer>
       <Logo onClick={() => navigate('/')}>🎬 Seokflix</Logo>
       <Nav>
-        <NavItem>영화</NavItem>
+        <NavItem to="/moviePage">영화</NavItem>
         <NavItem>게시판</NavItem>
         {userInfo && <NavItem to="/myPage">마이 페이지</NavItem>}
         {userInfo ? (

@@ -11,8 +11,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
-    background-color: ${({ theme }) => theme.background};
+    background-color: #121212;
     color: ${({ theme }) => theme.text};
+    
     /* transition: all 0.3s; */
   }
 
