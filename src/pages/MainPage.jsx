@@ -9,17 +9,20 @@ import {
   SectionTitle,
 } from '../components/styled/MainPage.styles';
 import Movie from '../components/movie/Moive';
+import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
   // 영화
   const [topMovies, setTopMovies] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getTopNowPlaying = async () => {
       try {
         const apiKey = import.meta.env.VITE_MOVIE_API;
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=ko-KR&page=1`
+          `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=ko-KR&region=KR&page=1`
         );
 
         // 상영 중인 영화 중 상위 5개만 가져옴
@@ -39,7 +42,7 @@ const MainPage = () => {
         <BannerContent>
           <h1>지금 상영 중!</h1>
           <p>IMAX로 즐기는 최고의 영화들</p>
-          <BookButton>영화 구경하러 가기</BookButton>
+          <BookButton onClick={() => navigate('/moviePage')}>영화 구경하러 가기</BookButton>
         </BannerContent>
       </BannerContainer>
 

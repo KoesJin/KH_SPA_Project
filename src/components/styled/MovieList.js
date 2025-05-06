@@ -57,3 +57,43 @@ export const LoadingText = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
 `;
+
+// 상단 헤더
+export const HeaderSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px 10px;
+`;
+
+export const HeaderTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+`;
+
+export const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 6px 12px;
+  width: 25%;
+`;
+
+export const SearchInput = styled.input`
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;

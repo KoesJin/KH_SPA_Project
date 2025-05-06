@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { GridContainer, LoadingText, LoadingWrapper, PaginationWrapper } from '../components/styled/MovieList';
+import {
+  GridContainer,
+  HeaderSection,
+  HeaderTitle,
+  LoadingText,
+  LoadingWrapper,
+  PaginationWrapper,
+  SearchInput,
+  SearchWrapper,
+} from '../components/styled/MovieList';
 import Moive from '../components/movie/Moive';
 import { Pagination, Stack } from '@mui/material';
 import { RingLoader } from 'react-spinners';
+import SearchIcon from '@mui/icons-material/Search';
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
 
   // 페이징
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
 
   // 로딩바
   const [loading, setLoading] = useState(true);
@@ -22,11 +33,14 @@ const MovieList = () => {
       try {
         const apiKey = import.meta.env.VITE_MOVIE_API;
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=ko-KR&page=${page}`
+          `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=ko-KR&region=KR&page=${page}`
         );
 
         // 영화 저장
         setMovies(res.data.results);
+
+        // 페이지수 저장
+        setTotalPage(res.data.total_pages);
       } catch (error) {
         console.error('영화 데이터를 불러오는 데 실패했습니다:', error);
       } finally {
@@ -42,11 +56,19 @@ const MovieList = () => {
     <>
       {loading ? (
         <LoadingWrapper>
-          <RingLoader color="#ffffff" size={60} />
+          <RingLoader color="#ffffff" size={80} />
           <LoadingText>영화를 불러오는 중입니다...</LoadingText>
         </LoadingWrapper>
       ) : (
         <>
+          <HeaderSection>
+            <HeaderTitle>🎬 현재 상영 중인 영화</HeaderTitle>
+            <SearchWrapper>
+              <SearchIcon style={{ color: '#ccc', marginRight: '8px' }} />
+              <SearchInput type="text" placeholder="영화 제목을 검색해보세요..." />
+            </SearchWrapper>
+          </HeaderSection>
+
           <GridContainer>
             {movies.map((m) => (
               <Moive
@@ -63,7 +85,7 @@ const MovieList = () => {
             {/* spacing은 간격 2 = 18px */}
             <Stack spacing={2}>
               <Pagination
-                count={100} // 전체 페이지 수
+                count={totalPage} // 전체 페이지 수
                 page={currentPage} // 현재 페이지 (1부터 시작)
                 onChange={(e, value) => setCurrentPage(value)} // value는 누른 숫자의 값을 추적함
                 color="primary" // 색상 (primary, secondary 등)
