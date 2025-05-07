@@ -14,7 +14,7 @@ import { yupResolver } from '@hookform/resolvers/yup'; // react-hook-form에서 
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import userInfoStore from '../../../store/userInfoStore';
-import { ErrorText } from '../../styled/SignUpPage.styles';
+import { ErrorText } from '../../styled/ErrorText';
 
 const schema = yup.object().shape({
   currentPw: yup.string().required('현재 비밀번호를 입력하세요.'),

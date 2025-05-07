@@ -72,12 +72,6 @@ export const Value = styled.span`
   color: white;
 `;
 
-export const Notice = styled.p`
-  text-align: center;
-  color: #888;
-  font-size: 14px;
-`;
-
 export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,6 @@ import {
   InfoRow,
   Label,
   Value,
-  Notice,
   ProfileImage,
   ProfileCard,
   ButtonGroup,
@@ -17,6 +16,7 @@ import DeleteModal from '../components/common/modal/DeleteModal';
 import UpdateInfoModal from '../components/common/modal/UpdateInfoModal';
 import { useState } from 'react';
 import UpdatePwModal from '../components/common/modal/UpdatePwModal';
+import { Notice } from '../components/styled/Notice';
 
 const MyPage = () => {
   const [modalType, setModalType] = useState(null);

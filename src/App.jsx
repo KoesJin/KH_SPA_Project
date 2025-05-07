@@ -12,6 +12,9 @@ import { Container } from './components/common/common';
 import MovieList from './pages/MovieListPage';
 import NotFound from './pages/NotFound';
 import BoardListPage from './pages/BoardListPage';
+import BoardEnrollForm from './pages/BoardEnrollForm';
+import { ToastContainer } from 'react-toastify';
+import BoardDetailPage from './pages/BoardDetailPage';
 
 // Router 외부에서 location을 선언하면 에러가남
 // 그렇기에 별도의 컴포넌트로 분리
@@ -30,6 +33,8 @@ const AppContent = () => {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/moviePage" element={<MovieList />} />
         <Route path="/boardPage" element={<BoardListPage />} />
+        <Route path="/boardEnrollForm" element={<BoardEnrollForm />} />
+        <Route path="/boardDetail/:no" element={<BoardDetailPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
@@ -44,6 +49,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <AppContent />
+        <ToastContainer />
       </Router>
     </ThemeProvider>
   );

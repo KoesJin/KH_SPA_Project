@@ -10,12 +10,11 @@ import {
   ConfirmBtn,
 } from '../../styled/DeleteUpdateModal.styles';
 import userInfoStore from '../../../store/userInfoStore';
-import { useState } from 'react';
 import axios from 'axios';
 import * as yup from 'yup'; // 유효성 검사 라이브러리
 import { yupResolver } from '@hookform/resolvers/yup'; // react-hook-form에서 yup 사용하려면 필요
 import { useForm } from 'react-hook-form';
-import { ErrorText } from '../../styled/SignUpPage.styles';
+import { ErrorText } from '../../styled/ErrorText';
 
 const schema = yup.object().shape({
   // 유효성 검사

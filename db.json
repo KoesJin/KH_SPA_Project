@@ -1,8 +1,85 @@
 {
   "user": [
     {
-      "id": "67ea",
-      "userName": "김진석",
+      "id": "c22c",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "459b",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "ad08",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "ea1a",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "6a8c",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "521c",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "230a",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "668d",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "db95",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "5934",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "641f",
+      "userName": "관리자",
+      "userId": "admin",
+      "userPw": "qwe123",
+      "phone": "01012343333"
+    },
+    {
+      "id": "68b2",
+      "userName": "김진만",
       "userId": "wlstjr2001",
       "userPw": "qwe123",
       "phone": "01012341234"
@@ -15,7 +92,8 @@
       "content": "스토리 전개도 탄탄하고 몰입감이 장난 아니었습니다.",
       "writer": "익명",
       "date": "2025-05-07",
-      "views": 368
+      "views": 368,
+      "id": "0050"
     },
     {
       "no": 2,
@@ -23,7 +101,8 @@
       "content": "실화 바탕이라 더 몰입해서 봤네요.",
       "writer": "넷덕",
       "date": "2025-05-06",
-      "views": 965
+      "views": 965,
+      "id": "b393"
     },
     {
       "no": 3,
@@ -31,7 +110,8 @@
       "content": "초반에는 살짝 지루했지만 후반부가 미쳤어요.",
       "writer": "홍길동",
       "date": "2025-05-05",
-      "views": 30
+      "views": 30,
+      "id": "e784"
     },
     {
       "no": 4,
@@ -39,7 +119,8 @@
       "content": "아이랑 같이 봤는데 너무 좋아하더라고요.",
       "writer": "홍길동",
       "date": "2025-05-04",
-      "views": 571
+      "views": 571,
+      "id": "2b89"
     },
     {
       "no": 5,
@@ -47,7 +128,8 @@
       "content": "시리즈 중 최고였습니다. 강력 추천!",
       "writer": "jinfilm",
       "date": "2025-05-03",
-      "views": 896
+      "views": 896,
+      "id": "0a21"
     },
     {
       "no": 6,
@@ -55,7 +137,8 @@
       "content": "배우 연기가 너무 좋아서 감정이입됐어요.",
       "writer": "jinfilm",
       "date": "2025-05-02",
-      "views": 288
+      "views": 288,
+      "id": "0d5b"
     },
     {
       "no": 7,
@@ -63,7 +146,8 @@
       "content": "여운이 오래 남는 영화네요.",
       "writer": "리뷰왕",
       "date": "2025-05-01",
-      "views": 584
+      "views": 584,
+      "id": "ec15"
     },
     {
       "no": 8,
@@ -71,7 +155,8 @@
       "content": "생각보다 전개가 빠르고 재밌었어요.",
       "writer": "리뷰왕",
       "date": "2025-04-30",
-      "views": 689
+      "views": 689,
+      "id": "e42a"
     },
     {
       "no": 9,
@@ -79,7 +164,8 @@
       "content": "다시 극장에서 보고 싶은 영화입니다.",
       "writer": "홍길동",
       "date": "2025-04-29",
-      "views": 346
+      "views": 346,
+      "id": "2163"
     },
     {
       "no": 10,
@@ -87,7 +173,8 @@
       "content": "음악과 연출 모두 만족스러웠어요.",
       "writer": "popcorn",
       "date": "2025-04-28",
-      "views": 585
+      "views": 585,
+      "id": "ebb2"
     },
     {
       "no": 11,
@@ -95,7 +182,8 @@
       "content": "CG도 화려하고 스케일도 컸어요.",
       "writer": "리뷰왕",
       "date": "2025-04-27",
-      "views": 556
+      "views": 556,
+      "id": "984c"
     },
     {
       "no": 12,
@@ -103,7 +191,8 @@
       "content": "영화 끝나고 한참 여운에 젖어있었네요.",
       "writer": "홍길동",
       "date": "2025-04-26",
-      "views": 198
+      "views": 198,
+      "id": "99a3"
     },
     {
       "no": 13,
@@ -111,7 +200,8 @@
       "content": "내용이 탄탄해서 시간 가는 줄 몰랐어요.",
       "writer": "리뷰왕",
       "date": "2025-04-25",
-      "views": 410
+      "views": 410,
+      "id": "aad5"
     },
     {
       "no": 14,
@@ -119,7 +209,8 @@
       "content": "스토리와 감정선 모두 완벽했습니다.",
       "writer": "cinephile",
       "date": "2025-04-24",
-      "views": 110
+      "views": 110,
+      "id": "d1ab"
     },
     {
       "no": 15,
@@ -127,7 +218,8 @@
       "content": "다소 아쉬운 점도 있지만 전체적으로 만족!",
       "writer": "리뷰왕",
       "date": "2025-04-23",
-      "views": 350
+      "views": 350,
+      "id": "08af"
     },
     {
       "no": 16,
@@ -135,7 +227,8 @@
       "content": "가족과 함께 보기에도 무난하고 재미있습니다.",
       "writer": "홍길동",
       "date": "2025-04-22",
-      "views": 26
+      "views": 26,
+      "id": "5a65"
     },
     {
       "no": 17,
@@ -143,7 +236,8 @@
       "content": "긴장감 넘치고 몰입도 최강이었어요.",
       "writer": "넷덕",
       "date": "2025-04-21",
-      "views": 909
+      "views": 909,
+      "id": "a5e1"
     },
     {
       "no": 18,
@@ -151,7 +245,8 @@
       "content": "다음 편이 벌써 기대되네요.",
       "writer": "무비러버",
       "date": "2025-04-20",
-      "views": 100
+      "views": 100,
+      "id": "af6d"
     },
     {
       "no": 19,
@@ -159,7 +254,8 @@
       "content": "원작을 잘 살렸다고 생각합니다.",
       "writer": "popcorn",
       "date": "2025-04-19",
-      "views": 701
+      "views": 701,
+      "id": "1699"
     },
     {
       "no": 20,
@@ -167,7 +263,8 @@
       "content": "배경음악이 분위기를 제대로 살렸어요.",
       "writer": "cinephile",
       "date": "2025-04-18",
-      "views": 537
+      "views": 537,
+      "id": "3bd9"
     },
     {
       "no": 21,
@@ -175,7 +272,35 @@
       "content": "배경음악이 분위기를 제대로 살렸어요.",
       "writer": "cinephile",
       "date": "2025-04-18",
-      "views": 537
+      "views": 537,
+      "id": "d80f"
+    },
+    {
+      "no": 22,
+      "id": "1e26",
+      "title": "안녕",
+      "content": "반갑습니다 테스트 중입니다",
+      "writer": "admin",
+      "date": "2025-05-07",
+      "views": 0
+    },
+    {
+      "no": 23,
+      "id": "e955",
+      "title": "ㅇㅇ",
+      "content": "ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅁㄴㅁㄴㄴㅁㄴㅁㅇㄴㅁㅇㄴㅁ",
+      "writer": "admin",
+      "date": "2025-05-07",
+      "views": 0
+    },
+    {
+      "id": "bcd2",
+      "no": 24,
+      "title": "글작성",
+      "content": "ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ",
+      "writer": "admin",
+      "date": "2025-05-07",
+      "views": 1
     }
   ]
 }

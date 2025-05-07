@@ -12,12 +12,12 @@ import {
   Icon,
   Button,
   SubText,
-  ErrorText,
 } from '../components/styled/SignUpPage.styles';
 import * as yup from 'yup'; // 유효성 검사 라이브러리
 import { yupResolver } from '@hookform/resolvers/yup'; // react-hook-form에서 yup 사용하려면 필요
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { ErrorText } from '../components/styled/ErrorText';
 
 const schema = yup.object().shape({
   // 유효성 검사
@@ -81,7 +81,7 @@ const SignUpPage = () => {
         phone: data.phone,
       });
 
-      if (res.data) {
+      if (res.status === 201) {
         alert('성공적으로 회원 가입이 완료되었습니다 ‼️');
         navigate('/login');
       }
@@ -101,7 +101,7 @@ const SignUpPage = () => {
         try {
           const res = await axios.get(`http://localhost:3001/user?userId=${userId}`);
 
-          if (res.data.length > 0) {
+          if (res.data.length > 0 && res.status === 200) {
             setError('userId', {
               type: 'manual',
               message: '이미 사용중인 아이디입니다.',

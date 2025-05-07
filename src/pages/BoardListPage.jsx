@@ -15,6 +15,8 @@ import { PaginationWrapper } from '../components/styled/Board';
 import { Pagination, Stack } from '@mui/material';
 import { useState } from 'react';
 import userInfoStore from '../store/userInfoStore';
+import { useNavigate } from 'react-router-dom';
+import { performToast } from '../utils/performToast';
 
 const BoardListPage = () => {
   const { boardList, getBoardList, totalCount } = boardStore();
@@ -27,9 +29,19 @@ const BoardListPage = () => {
   const startIdx = (currentPage - 1) * limitContent; // 어디부터 자를지 시작점
   const currentItems = boardList.slice(startIdx, startIdx + limitContent); // 어디부터 어디까지 자를지
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     getBoardList();
   }, []);
+
+  const checkUserInfo = (boardNo) => {
+    if (!userInfo) {
+      performToast({ msg: '로그인 후 이용해주세요', type: 'error' });
+    } else {
+      navigate(`/boardDetail/${boardNo}`);
+    }
+  };
 
   return (
     <BoardContainer>
@@ -38,7 +50,7 @@ const BoardListPage = () => {
           <FaChalkboardUser style={{ verticalAlign: 'middle', marginRight: '8px', height: '25px', width: '35px' }} />
           게시판
         </h2>
-        {userInfo && <WriteButton>글쓰기</WriteButton>}
+        {userInfo && <WriteButton onClick={() => navigate('/boardEnrollForm')}>글쓰기</WriteButton>}
       </BoardHeader>
 
       <BoardTable>
@@ -48,15 +60,17 @@ const BoardListPage = () => {
             <TableHead>제목</TableHead>
             <TableHead>작성자</TableHead>
             <TableHead>작성일</TableHead>
+            <TableHead>조회수</TableHead>
           </TableRow>
         </thead>
         <tbody>
           {currentItems.map((board) => (
-            <TableRow key={board.no}>
+            <TableRow key={board.no} onClick={() => checkUserInfo(board.no)}>
               <TableCell>{board.no}</TableCell>
               <TableCell>{board.title}</TableCell>
               <TableCell>{board.writer}</TableCell>
               <TableCell>{board.date}</TableCell>
+              <TableCell>{board.views}</TableCell>
             </TableRow>
           ))}
         </tbody>

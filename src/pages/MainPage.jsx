@@ -24,9 +24,8 @@ const MainPage = () => {
         const res = await axios.get(
           `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=ko-KR&region=KR&page=1`
         );
-
         // 상영 중인 영화 중 상위 5개만 가져옴
-        setTopMovies(res.data.results.slice(0, 5));
+        if (res.status === 200) setTopMovies(res.data.results.slice(0, 5));
       } catch (error) {
         console.error('상영 중인 영화 불러오기 실패:', error);
       }

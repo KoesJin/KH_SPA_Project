@@ -8,7 +8,6 @@ const userInfoStore = create(
   persist(
     (set) => ({
       userInfo: null,
-      theme: 'light',
       setUserInfo: (user) => set({ userInfo: user }),
       clearUserInfo: () => set({ userInfo: null }),
     }),

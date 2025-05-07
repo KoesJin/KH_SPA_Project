@@ -13,7 +13,8 @@ const MovieModal = ({ movieId, onClose }) => {
         const res = await axios.get(
           `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=ko-KR&append_to_response=videos`
         );
-        setMovie(res.data);
+
+        if (res.status === 200) setMovie(res.data);
       } catch (error) {
         console.error('영화 상세정보를 불러오는 중 오류 발생:', error);
       }

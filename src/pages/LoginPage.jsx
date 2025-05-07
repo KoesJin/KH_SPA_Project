@@ -43,7 +43,7 @@ const LoginPage = () => {
     try {
       const res = await axios.get(`http://localhost:3001/user?userId=${userId}`);
 
-      if (res.data.length === 0) {
+      if (res.data.length === 0 && res.status === 200) {
         alert('존재하지 않는 아이디입니다.');
       } else {
         // 비멀번호 같은지 확인

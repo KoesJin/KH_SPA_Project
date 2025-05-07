@@ -50,11 +50,13 @@ const MovieList = () => {
           );
         }
 
-        // 영화 저장
-        setMovies(res.data.results);
+        if (res.status === 200) {
+          // 영화 저장
+          setMovies(res.data.results);
 
-        // 페이지수 저장
-        setTotalPage(res.data.total_pages);
+          // 페이지수 저장
+          setTotalPage(res.data.total_pages);
+        }
       } catch (error) {
         console.error('영화 데이터를 불러오는 데 실패했습니다:', error);
       } finally {
