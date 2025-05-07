@@ -23,7 +23,7 @@ export const Nav = styled.nav`
 export const NavItem = styled(Link)`
   cursor: pointer;
   font-size: 16px;
-  transition: 0.2s;
+  transition: all 0.2s;
 
   &:hover {
     color: #e50914;

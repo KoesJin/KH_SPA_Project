@@ -28,7 +28,7 @@ const MovieModal = ({ movieId, onClose }) => {
   const trailer = movie.videos.results.find((v) => v.type === 'Trailer' && v.site === 'YouTube');
 
   return (
-    <Overlay onClick={onClose}>
+    <Overlay>
       <ModalBox onClick={(e) => e.stopPropagation()}>
         <CloseBtn onClick={onClose}>X</CloseBtn>
         <h2>{movie.title}</h2>
