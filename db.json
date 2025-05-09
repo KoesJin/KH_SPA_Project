@@ -1,62 +1,6 @@
 {
   "user": [
     {
-      "id": "c22c",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "459b",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "ad08",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "ea1a",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "6a8c",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "521c",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "230a",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "668d",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
       "id": "db95",
       "userName": "관리자",
       "userId": "admin",
@@ -64,23 +8,16 @@
       "phone": "01012343333"
     },
     {
-      "id": "5934",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
-      "id": "641f",
-      "userName": "관리자",
-      "userId": "admin",
-      "userPw": "qwe123",
-      "phone": "01012343333"
-    },
-    {
       "id": "68b2",
-      "userName": "김진만",
+      "userName": "김진석",
       "userId": "wlstjr2001",
+      "userPw": "qwe1234",
+      "phone": "01012341234"
+    },
+    {
+      "id": "00ce",
+      "userName": "김진만",
+      "userId": "wlstjr2002",
       "userPw": "qwe123",
       "phone": "01012341234"
     }
@@ -300,7 +237,16 @@
       "content": "ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ",
       "writer": "admin",
       "date": "2025-05-07",
-      "views": 1
+      "views": 4
+    },
+    {
+      "id": "d658",
+      "no": 25,
+      "title": "안녕",
+      "content": "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",
+      "writer": "wlstjr2001",
+      "date": "2025-05-07",
+      "views": 11
     }
   ]
 }

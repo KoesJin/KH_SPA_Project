@@ -4,7 +4,6 @@ import { Button, Content, DetailWrapper, InfoBox, InfoItem, Title } from '../com
 import boardStore from '../store/boardStore';
 import { FaRegFileAlt } from 'react-icons/fa';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import userInfoStore from '../store/userInfoStore.js';
 import { Notice } from '../components/styled/Notice.js';
 
@@ -13,12 +12,17 @@ const BoardDetailPage = () => {
 
   const navigate = useNavigate();
 
-  const { boardList, getBoardList } = boardStore();
+  const { boardList, getBoardList, viewsUp } = boardStore();
 
   const { userInfo } = userInfoStore();
 
   useEffect(() => {
-    getBoardList();
+    const updateView = async () => {
+      await viewsUp(no); // 조회수 먼저 증가
+      await getBoardList(); // 최신 목록 가져오기 (조회수 반영됨)
+    };
+
+    updateView();
   }, []);
 
   const boardDetail = boardList.find((board) => board.no === parseInt(no));
