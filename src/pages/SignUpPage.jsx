@@ -70,18 +70,20 @@ const SignUpPage = () => {
     clearErrors,
   } = useForm({ resolver: yupResolver(schema) });
 
-  // onSubmit -> handleSubmit -> Ok 시 onSubmit 함수 실행 -> 데이터 서버에 전달
+  // onSubmit = handleSubmit -> Ok 시 onSubmit 함수 실행 -> 데이터 서버에 전달
   // 회원 가입 로직
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post('http://localhost:3001/user', {
-        userName: data.userName,
-        userId: data.userId,
-        userPw: data.userPw,
+      const res = await axios.post('http://localhost:8888/api/member', {
+        user_id: data.userId,
+        user_name: data.userName,
+        user_pw: data.userPw,
         phone: data.phone,
       });
 
-      if (res.status === 201) {
+      console.log(res);
+
+      if (res.status === 200) {
         alert('성공적으로 회원 가입이 완료되었습니다 ‼️');
         navigate('/login');
       }
@@ -99,9 +101,12 @@ const SignUpPage = () => {
       clearTimeout(eventFlag); //아직 실행되지않은 setTimeout 취소 -> 0.5초안에 입력을 추가로 하면 앞에 setTimout을 취소
       eventFlag = setTimeout(async () => {
         try {
-          const res = await axios.get(`http://localhost:3001/user?userId=${userId}`);
+          const res = await axios.get(`http://localhost:8888/api/member/check-id`, {
+            params: { userId: userId },
+          });
 
-          if (res.data.length > 0 && res.status === 200) {
+          if (res.status === 200 && res.data?.user_id) {
+            // res.data에 값이 있다면 user_id 반환
             setError('userId', {
               type: 'manual',
               message: '이미 사용중인 아이디입니다.',
