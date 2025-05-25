@@ -41,23 +41,27 @@ const LoginPage = () => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:3001/user?userId=${userId}`);
+      const res = await axios.post(`http://localhost:8888/api/member/login`, {
+        user_id: userId,
+        user_pw: userPw,
+      });
 
-      if (res.data.length === 0 && res.status === 200) {
-        alert('존재하지 않는 아이디입니다.');
+      // 로그인 성공
+      if (res.status === 200 && res.data?.user_id) {
+        setUserInfo(res.data);
+        alert('로그인에 성공하였습니다 ‼️');
+        navigate('/');
       } else {
-        // 비멀번호 같은지 확인
-        if (res.data[0].userPw === userPw) {
-          // store에 유저 정보 저장
-          setUserInfo(res.data[0]);
-          alert('로그인에 성공하였습니다 ‼️');
-          navigate('/');
-        } else {
-          alert('비밀번호가 틀렸습니다.');
-        }
+        alert('아이디 또는 비밀번호가 잘못되었습니다.');
       }
     } catch (error) {
-      console.log('로그인 axios 에러 : ', error);
+      if (error.response.status === 400) {
+        alert('아이디 또는 비밀번호가 잘못되었습니다.');
+      } else if (error.response.status === 500) {
+        alert('존재하지 않는 아이디입니다.');
+      } else {
+        console.error('로그인 오류:', error);
+      }
     }
   };
 

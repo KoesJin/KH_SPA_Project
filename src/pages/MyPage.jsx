@@ -38,11 +38,11 @@ const MyPage = () => {
             <Title>회원 정보</Title>
             <InfoRow>
               <Label>이름</Label>
-              <Value>{userInfo.userName}</Value>
+              <Value>{userInfo.user_name}</Value>
             </InfoRow>
             <InfoRow>
               <Label>아이디</Label>
-              <Value>{userInfo.userId}</Value>
+              <Value>{userInfo.user_id}</Value>
             </InfoRow>
             <InfoRow>
               <Label>전화번호</Label>

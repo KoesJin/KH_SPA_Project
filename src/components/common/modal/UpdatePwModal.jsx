@@ -22,7 +22,7 @@ const schema = yup.object().shape({
   newPw: yup
     .string()
     .required('새 비밀번호를 입력하세요.')
-    .test('현재 비밀번호 새 비밀번호 확인', '현재 비밀번호와 같습니다.', function (value) {
+    .test('현재 비밀번호 새 비밀번호 확인', '입력하신 현재 비밀번호와 같습니다.', function (value) {
       return value !== this.parent.currentPw;
     })
     .matches(/^(?=.*[a-zA-Z]).{5,}$/, '비밀번호는 영문자를 포함해 5자 이상이어야 합니다.'),
@@ -47,17 +47,15 @@ const UpdatePwModal = ({ closeModal }) => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const handleUpdatePw = async (data) => {
-    if (data.currentPw !== userInfo.userPw) {
-      alert('현재 비밀번호가 일치하지 않습니다.');
-      return;
-    }
-
     try {
-      const res = await axios.patch(`http://localhost:3001/user/${userInfo.id}`, {
-        userPw: data.newPw,
+      const res = await axios.patch(`http://localhost:8888/api/member/change-pw`, {
+        user_id: userInfo.user_id,
+        current_pw: data.currentPw,
+        new_pw: data.newPw,
       });
 
-      if (res.status === 200) {
+      console.log(res);
+      if (res.status === 200 && res.data?.user_id) {
         // 모달닫고
         closeModal();
 
@@ -66,7 +64,8 @@ const UpdatePwModal = ({ closeModal }) => {
 
         alert('정상적으로 비밀번호 정보변경이 완료되었습니다.');
       } else {
-        alert('비밀번호 변경에 실패하였습니다.');
+        // 현재 비밀번호와 입력한 현재 비밀번호가 같은경우
+        alert('현재 비밀번호가 틀렸습니다.');
       }
     } catch (error) {
       console.log('비밀번호 변경 axios 에러 :', error);

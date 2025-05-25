@@ -41,15 +41,16 @@ const UpdateInfoModal = ({ closeModal }) => {
     resolver: yupResolver(schema),
     // defaultValues를 이용해 초기값 세팅 가능
     defaultValues: {
-      userName: userInfo.userName,
+      userName: userInfo.user_name,
       phone: userInfo.phone,
     },
   });
 
   const handleUpdateInfo = async (data) => {
     try {
-      const res = await axios.patch(`http://localhost:3001/user/${userInfo.id}`, {
-        userName: data.userName,
+      const res = await axios.patch(`http://localhost:8888/api/member/change-info`, {
+        user_id: userInfo.user_id,
+        user_name: data.userName,
         phone: data.phone,
       });
 
@@ -65,6 +66,9 @@ const UpdateInfoModal = ({ closeModal }) => {
         alert('회원 정보 변경에 실패하였습니다.');
       }
     } catch (error) {
+      if (error.status === 500) {
+        alert('존재하지 않는 회원입니다.');
+      }
       console.log('회원정보 변경 axios 에러 :', error);
     }
   };
